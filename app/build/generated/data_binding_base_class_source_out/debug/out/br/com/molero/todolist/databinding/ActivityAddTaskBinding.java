@@ -38,6 +38,9 @@ public final class ActivityAddTaskBinding implements ViewBinding {
   public final TextInputLayout tilDate;
 
   @NonNull
+  public final TextInputLayout tilDescription;
+
+  @NonNull
   public final TextInputLayout tilHour;
 
   @NonNull
@@ -49,14 +52,15 @@ public final class ActivityAddTaskBinding implements ViewBinding {
   private ActivityAddTaskBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton btnCancel, @NonNull MaterialButton btnNewTask,
       @NonNull Guideline guideEnd, @NonNull Guideline guideStart, @NonNull TextInputLayout tilDate,
-      @NonNull TextInputLayout tilHour, @NonNull TextInputLayout tilTitle,
-      @NonNull MaterialToolbar toolbar) {
+      @NonNull TextInputLayout tilDescription, @NonNull TextInputLayout tilHour,
+      @NonNull TextInputLayout tilTitle, @NonNull MaterialToolbar toolbar) {
     this.rootView = rootView;
     this.btnCancel = btnCancel;
     this.btnNewTask = btnNewTask;
     this.guideEnd = guideEnd;
     this.guideStart = guideStart;
     this.tilDate = tilDate;
+    this.tilDescription = tilDescription;
     this.tilHour = tilHour;
     this.tilTitle = tilTitle;
     this.toolbar = toolbar;
@@ -119,6 +123,12 @@ public final class ActivityAddTaskBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.til_description;
+      TextInputLayout tilDescription = ViewBindings.findChildViewById(rootView, id);
+      if (tilDescription == null) {
+        break missingId;
+      }
+
       id = R.id.til_hour;
       TextInputLayout tilHour = ViewBindings.findChildViewById(rootView, id);
       if (tilHour == null) {
@@ -138,7 +148,7 @@ public final class ActivityAddTaskBinding implements ViewBinding {
       }
 
       return new ActivityAddTaskBinding((ConstraintLayout) rootView, btnCancel, btnNewTask,
-          guideEnd, guideStart, tilDate, tilHour, tilTitle, toolbar);
+          guideEnd, guideStart, tilDate, tilDescription, tilHour, tilTitle, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
