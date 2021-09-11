@@ -1,0 +1,10 @@
+br/com/molero/todolist/databinding/ItemTaskBinding.java
+ br.com.molero.todolist.databinding.ItemTaskBinding
+br/com/molero/todolist/databinding/EmptyStateBinding.java
+ br.com.molero.todolist.databinding.EmptyStateBinding
+br/com/molero/todolist/databinding/ActivityMainBinding.java
+ br.com.molero.todolist.databinding.ActivityMainBinding
+br/com/molero/todolist/BuildConfig.java
+ br.com.molero.todolist.BuildConfig
+br/com/molero/todolist/databinding/ActivityAddTaskBinding.java
+ br.com.molero.todolist.databinding.ActivityAddTaskBinding
